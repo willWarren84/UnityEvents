@@ -2,7 +2,7 @@ I find that these two classes have proven invaluable for development of several 
 Typically Unity is taught to become a monolithic network of references between components and GameObjects. My issue with this is the lack of adaptability this provides.
 By using an event manager to de-couple components from one-another we're able to raise, and respond to, events easily meaning that we can extend and replace functionality seamlessly.
 
-# Getting started using the EventManager component
+# Getting started using the EventManager
 
 In order to start seeing the benefit of the event manager create an empty GameObject in any scene and add the EventManager component to it (alternatively add the EventManager component to any existing GameObject in your scene).
 
@@ -47,7 +47,7 @@ Now, when the MyEventName event is triggered the MyExampleComponent's MyMethod m
 One issue with this approach is that you have to both start **and stop** listening for events so, even in a small project, you will quickly begin to get fed up of typing "EventManager.StartListening(..." and "EventManager.StopListening(" in each component which you want to respond to events, this is why the EventManagedComponent class was created.
 
 
-# Using EventManagedComponent to reduce code repetition
+# Using EventManagedComponent
 
 EventManagedComponent is simply a helper class which inherits from MonoBehaviour and will automatically start and stop listening for events which are in it's Events EventList. EventManagedComponent is intended to be inherited by your component and have its SetEvents method overridden (on a side note, if / when Unity support C# 8 this will probably be updated to an [interface with a default method implementation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/default-interface-methods)).
 
