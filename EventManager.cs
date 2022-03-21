@@ -100,7 +100,7 @@ public class EventManager : MonoBehaviour
     /// </summary>
     /// <param name="eventName"></param>
     /// <param name="param"></param>
-    public static void TriggerEvent(string eventName, object param)
+    public static void TriggerEvent(string eventName, object param = null)
     {
         ManagedEvent thisEvent = null;
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
